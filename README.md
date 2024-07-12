@@ -66,7 +66,7 @@ Open your browser and navigate to http://localhost:5000/api-docs to access the A
 
 ## API Documentation
 
-The API documentation provides detailed information about the available endpoints, request/response formats mechanisms. Access it at http://localhost:5000/api-docs.
+The API documentation provides detailed information about the available endpoints, request/response formats mechanisms. Access it at http://localhost:5000/api-docs for locally or https://url-shortner-lb0f.onrender.com/api-docs/ for globally;
 
 ## Development
 
