@@ -14,6 +14,11 @@ const app = express();
 
 import connectDB from "./db/dbConfig.js";
 
+// swagger
+import swaggerUI from "swagger-ui-express";
+import YAML from "yamljs";
+const swaggerDocument = YAML.load("./swagger.yaml");
+
 // import routes.
 import urlRouter from "./routes/url.js";
 
@@ -35,10 +40,13 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
-app.get("/", async (req, res) => {
-  res.send("Hello world");
+app.get("/", (req, res) => {
+  res.send(
+    "<h1>Welcome to Bidding App API</h1> <a href='/api-docs'>Documentation</a>"
+  );
 });
 
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use("/api/v1/url", urlRouter);
 
 app.use(notFoundMiddleware);

@@ -42,6 +42,7 @@ export const generateShortUrl = async (req, res) => {
       msg: "successfully generated",
       shorturlId: shortId,
       originalUrl,
+      shortUrlLink: `https://url-shortner-lb0f.onrender.com/api/v1/url/${shortId}`,
     });
   } catch (error) {
     console.log("error in generateshorturl controller", error);

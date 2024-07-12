@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  title: URL-SHORTNER
+  version: 1.0.0
+servers:
+  - url: https://url-shortner-lb0f.onrender.com
+paths:
+  /api/v1/url:
+    post:
+      tags:
+        - default
+      summary: GENERATE-SHORT-URL
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                customId: ""
+                originalUrl: >-
+                  https://www.amazon.in/?&tag=googhydrabk1-21&ref=pd_sl_7hz2t19t5c_e&adgrpid=155259815513&hvpone=&hvptwo=&hvadid=674842289437&hvpos=&hvnetw=g&hvrand=1077213454325523385&hvqmt=e&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=21341&hvtargid=kwd-10573980&hydadcr=14453_2316415&gad_source=1
+                timeToExpire: 5 minute
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/url/{shortId}:
+    parameters:
+      - in: path
+        name: shortId
+        schema:
+          type: string
+        required: true
+        description: shortId
+    get:
+      tags:
+        - default
+      summary: GET URL
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
+  /api/v1/url/analytics/{shortId}:
+    parameters:
+      - in: path
+        name: shortId
+        schema:
+          type: string
+        required: true
+        description: shortId
+    get:
+      tags:
+        - default
+      summary: URL ANALITICS
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json: {}
