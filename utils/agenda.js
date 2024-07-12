@@ -1,6 +1,6 @@
 import Agenda from "agenda";
 import dotenv from "dotenv";
-import URL from "../models/url.js";
+import URL from "../models/URL.js";
 import redis from "./redis.js";
 
 dotenv.config();

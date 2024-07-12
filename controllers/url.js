@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { nanoid } from "nanoid";
 import { BadRequestError } from "../errors/bad-request.js";
-import URL from "../models/url.js";
+import URL from "../models/URL.js";
 import { CustomAPIError } from "../errors/custom-api.js";
 import { UAParser } from "ua-parser-js";
 import { NotFoundError } from "../errors/not-found.js";

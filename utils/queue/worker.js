@@ -1,5 +1,5 @@
 import { Worker } from "bullmq";
-import URL from "../../models/url.js";
+import URL from "../../models/URL.js";
 import redis from "../redis.js";
 import { NotFoundError } from "../../errors/not-found.js";
 import dotenv from "dotenv";
